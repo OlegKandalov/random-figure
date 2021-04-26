@@ -2,7 +2,7 @@ package interfaces;
 
 public interface FigureInfo {
 
-    boolean isDrawing();
+    boolean isDrawn();
 
     double getArea();
 

@@ -25,18 +25,21 @@ public class GenerateFigure {
 
     public static Circle getRandomCircle() {
         Circle circle = new Circle();
+        circle.setDrawn(true);
         circle.setDiameter(random.nextDouble() + 1);
         return new Circle(getRandomColor(), circle.getPerimeter(), circle.getRadius(), circle.getArea());
     }
 
     public static Square getRandomSquare() {
         Square square = new Square();
+        square.setDrawn(true);
         square.setA(random.nextDouble() + 1);
         return new Square(getRandomColor(), square.getDiagonal(), square.getPerimeter(), square.getArea());
     }
 
     public static Trapezoid getRandomTrapezoid() {
         Trapezoid trapezoid = new Trapezoid();
+        trapezoid.setDrawn(true);
         trapezoid.setA(random.nextDouble() + 1);
         trapezoid.setB(random.nextDouble() + 1);
         trapezoid.setHeight(random.nextDouble() + 1);
@@ -46,6 +49,7 @@ public class GenerateFigure {
 
     public static Triangle getRandomTriangle() {
         Triangle triangle = new Triangle();
+        triangle.setDrawing(true);
         triangle.setA(random.nextDouble() + 1);
         triangle.setB(random.nextDouble() + 1);
         return new Triangle(getRandomColor(), triangle.getArea(),

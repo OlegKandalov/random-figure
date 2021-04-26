@@ -5,6 +5,7 @@ import interfaces.TriangleInterface;
 
 public class Triangle extends Figure implements TriangleInterface {
     private Color color;
+    private boolean isDrawing;
     private double a;
     private double b;
     private double area;
@@ -25,6 +26,10 @@ public class Triangle extends Figure implements TriangleInterface {
     public Triangle() {
     }
 
+    public void setDrawing(boolean drawing) {
+        isDrawing = drawing;
+    }
+
     public double getA() {
         return a;
     }
@@ -42,7 +47,7 @@ public class Triangle extends Figure implements TriangleInterface {
     }
 
     @Override
-    public boolean isDrawing() {
+    public boolean isDrawn() {
         return false;
     }
 

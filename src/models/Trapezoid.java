@@ -5,6 +5,7 @@ import interfaces.TrapezoidInterface;
 
 public class Trapezoid extends Figure implements TrapezoidInterface {
     private Color color;
+    private boolean isDrawn;
     private double a;
     private double b;
     private double c;
@@ -24,6 +25,10 @@ public class Trapezoid extends Figure implements TrapezoidInterface {
     }
 
     public Trapezoid() {
+    }
+
+    public void setDrawn(boolean drawn) {
+        isDrawn = drawn;
     }
 
     public Color getColor() {
@@ -92,7 +97,7 @@ public class Trapezoid extends Figure implements TrapezoidInterface {
     }
 
     @Override
-    public boolean isDrawing() {
+    public boolean isDrawn() {
         return false;
     }
 

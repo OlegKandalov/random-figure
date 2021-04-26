@@ -6,6 +6,7 @@ import interfaces.CircleInterface;
 public class Circle extends Figure implements CircleInterface {
     final double Pi = 3.1415926536;
     private Color color;
+    private boolean isDrawn;
     private double diameter;
     private double perimeter;
     private double radius;
@@ -19,6 +20,10 @@ public class Circle extends Figure implements CircleInterface {
     }
 
     public Circle() {
+    }
+
+    public void setDrawn(boolean drawn) {
+        isDrawn = drawn;
     }
 
     public Color getColor() {
@@ -61,7 +66,7 @@ public class Circle extends Figure implements CircleInterface {
     }
 
     @Override
-    public boolean isDrawing() {
+    public boolean isDrawn() {
         return false;
     }
 

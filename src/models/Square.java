@@ -9,6 +9,7 @@ public class Square extends Figure implements SquareInterface {
     private double diagonal;
     private double perimeter;
     private double area;
+    private boolean isDrawn;
 
     public Square(Color color, double diagonal, double perimeter, double area) {
         this.color = color;
@@ -18,6 +19,10 @@ public class Square extends Figure implements SquareInterface {
     }
 
     public Square() {
+    }
+
+    public void setDrawn(boolean drawn) {
+        isDrawn = drawn;
     }
 
     public Color getColor() {
@@ -55,7 +60,7 @@ public class Square extends Figure implements SquareInterface {
     }
 
     @Override
-    public boolean isDrawing() {
+    public boolean isDrawn() {
         return false;
     }
 
