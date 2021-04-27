@@ -4,30 +4,22 @@ import enums.Color;
 import interfaces.TriangleInterface;
 
 public class Triangle extends Figure implements TriangleInterface {
-    private Color color;
-    private boolean isDrawing;
     private double a;
     private double b;
     private double area;
     private double hypotenuse;
     private double perimeter;
 
-    public Color getColor() {
-        return color;
-    }
-
-    public Triangle(Color color, double area, double hypotenuse, double perimeter) {
-        this.color = color;
-        this.area = area;
-        this.hypotenuse = hypotenuse;
-        this.perimeter = perimeter;
+    public Triangle(Color color, boolean isDraw, double a, double b) {
+        super(color, isDraw);
+        this.a = a;
+        this.b = b;
+        this.area = getArea();
+        this.hypotenuse = getHypotenuse();
+        this.perimeter = getPerimeter();
     }
 
     public Triangle() {
-    }
-
-    public void setDrawing(boolean drawing) {
-        isDrawing = drawing;
     }
 
     public double getA() {
@@ -72,7 +64,7 @@ public class Triangle extends Figure implements TriangleInterface {
     @Override
     public String toString() {
         return "Figure: Triangle{" +
-                "color=" + color +
+                "color=" + getColor() +
                 ", area=" + area +
                 ", hypotenuse=" + hypotenuse +
                 ", perimeter=" + perimeter +

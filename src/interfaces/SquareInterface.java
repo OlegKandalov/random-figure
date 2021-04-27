@@ -1,6 +1,6 @@
 package interfaces;
 
-public interface SquareInterface extends FigureInfo {
+public interface SquareInterface {
 
     double getDiagonal();
 

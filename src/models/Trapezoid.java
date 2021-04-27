@@ -4,8 +4,6 @@ import enums.Color;
 import interfaces.TrapezoidInterface;
 
 public class Trapezoid extends Figure implements TrapezoidInterface {
-    private Color color;
-    private boolean isDrawn;
     private double a;
     private double b;
     private double c;
@@ -16,27 +14,16 @@ public class Trapezoid extends Figure implements TrapezoidInterface {
     private double area;
     private double perimeter;
 
-    public Trapezoid(Color color, double middleLine, double height, double area, double perimeter) {
-        this.color = color;
-        this.middleLine = middleLine;
+    public Trapezoid(Color color, boolean isDrawn, double height, double a, double b, double c, double d) {
+        super(color, isDrawn);
         this.height = height;
-        this.area = area;
-        this.perimeter = perimeter;
-    }
-
-    public Trapezoid() {
-    }
-
-    public void setDrawn(boolean drawn) {
-        isDrawn = drawn;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        this.d = d;
+        this.middleLine = getMiddleLine();
+        this.area = getArea();
+        this.perimeter = getPerimeter();
     }
 
     public double getA() {
@@ -97,11 +84,6 @@ public class Trapezoid extends Figure implements TrapezoidInterface {
     }
 
     @Override
-    public boolean isDrawn() {
-        return false;
-    }
-
-    @Override
     public double getArea() {
         double middleLine = getMiddleLine();
         double height = getHeight();
@@ -116,7 +98,7 @@ public class Trapezoid extends Figure implements TrapezoidInterface {
     @Override
     public String toString() {
         return "Figure: Trapezoid{" +
-                "color=" + color +
+                "color=" + getColor() +
                 ", middleLine=" + middleLine +
                 ", height=" + height +
                 ", area=" + area +

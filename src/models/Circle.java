@@ -5,33 +5,17 @@ import interfaces.CircleInterface;
 
 public class Circle extends Figure implements CircleInterface {
     final double Pi = 3.1415926536;
-    private Color color;
-    private boolean isDrawn;
     private double diameter;
     private double perimeter;
     private double radius;
     private double area;
 
-    public Circle(Color color, double perimeter, double radius, double area) {
-        this.color = color;
-        this.perimeter = perimeter;
-        this.radius = radius;
-        this.area = area;
-    }
-
-    public Circle() {
-    }
-
-    public void setDrawn(boolean drawn) {
-        isDrawn = drawn;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
+    public Circle(Color color, boolean isDrawn, double diameter) {
+        super(color, isDrawn);
+        this.diameter = diameter;
+        this.perimeter = getPerimeter();
+        this.radius = getRadius();
+        this.area = getArea();
     }
 
     public void setDiameter(double diameter) {
@@ -66,11 +50,6 @@ public class Circle extends Figure implements CircleInterface {
     }
 
     @Override
-    public boolean isDrawn() {
-        return false;
-    }
-
-    @Override
     public double getArea() {
         final double radius = getRadius();
         return Pi * Math.pow(radius, 2);
@@ -79,7 +58,7 @@ public class Circle extends Figure implements CircleInterface {
     @Override
     public String toString() {
         return "Figure: Circle{" +
-                "color=" + color +
+                "color=" + getColor() +
                 ", perimeter=" + perimeter +
                 ", radius=" + radius +
                 ", area=" + area +

@@ -1,6 +1,6 @@
 package interfaces;
 
-public interface TriangleInterface extends FigureInfo {
+public interface TriangleInterface {
 
     double getHypotenuse();
 

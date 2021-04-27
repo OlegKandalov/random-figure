@@ -4,33 +4,17 @@ import enums.Color;
 import interfaces.SquareInterface;
 
 public class Square extends Figure implements SquareInterface {
-    private Color color;
     private double a;
     private double diagonal;
     private double perimeter;
     private double area;
-    private boolean isDrawn;
 
-    public Square(Color color, double diagonal, double perimeter, double area) {
-        this.color = color;
-        this.diagonal = diagonal;
-        this.perimeter = perimeter;
-        this.area = area;
-    }
-
-    public Square() {
-    }
-
-    public void setDrawn(boolean drawn) {
-        isDrawn = drawn;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
+    public Square(Color color, boolean isDrawn, double a) {
+        super(color, isDrawn);
+        this.a = a;
+        this.diagonal = getDiagonal();
+        this.perimeter = getPerimeter();
+        this.area = getArea();
     }
 
     public double getA() {
@@ -60,11 +44,6 @@ public class Square extends Figure implements SquareInterface {
     }
 
     @Override
-    public boolean isDrawn() {
-        return false;
-    }
-
-    @Override
     public double getArea() {
         return Math.pow(a, 2);
     }
@@ -77,7 +56,7 @@ public class Square extends Figure implements SquareInterface {
     @Override
     public String toString() {
         return "Figure: Square{" +
-                "color=" + color +
+                "color=" + getColor() +
                 ", diagonal=" + diagonal +
                 ", perimeter=" + perimeter +
                 ", area=" + area +

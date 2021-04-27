@@ -1,6 +1,6 @@
 package interfaces;
 
-public interface TrapezoidInterface extends FigureInfo {
+public interface TrapezoidInterface {
 
     double getMiddleLine();
 
