@@ -13,7 +13,7 @@ public class GenerateFigure {
         Figure[] figures = new Figure[lengthOfArray];
 
         for (int i = 0; i < lengthOfArray; i++) {
-            int randomCase = random.nextInt(3) + 1;
+            int randomCase = random.nextInt(4) + 1;
             switch (randomCase) {
                 case 1:
                     figures[i] = getRandomCircle();
