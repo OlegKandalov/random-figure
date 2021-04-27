@@ -11,7 +11,8 @@ public abstract class Figure {
         this.isDrawn = isDrawn;
     }
 
-    public Figure() {}
+    public Figure() {
+    }
 
     abstract double getArea();
 

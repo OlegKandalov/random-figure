@@ -8,17 +8,26 @@ import java.util.Random;
 public class GenerateFigure {
     final static Random random = new Random();
 
-    public static List<Figure> getRandomSet() {
-        List<Figure> fullSet = new ArrayList<>();
-        fullSet.add(getRandomCircle());
-        fullSet.add(getRandomSquare());
-        fullSet.add(getRandomTriangle());
-        fullSet.add(getRandomTrapezoid());
-
-        List<Figure> figures = new ArrayList<>();
+    public static Figure[] getRandomSet() {
         int lengthOfArray = new Random().nextInt(10) + 1;
+        Figure[] figures = new Figure[lengthOfArray];
+
         for (int i = 0; i < lengthOfArray; i++) {
-            figures.add(fullSet.get(random.nextInt(3)));
+            int randomCase = random.nextInt(3) + 1;
+            switch (randomCase) {
+                case 1:
+                    figures[i] = getRandomCircle();
+                    break;
+                case 2:
+                    figures[i] = getRandomSquare();
+                    break;
+                case 3:
+                    figures[i] = getRandomTrapezoid();
+                    break;
+                case 4:
+                    figures[i] = getRandomTriangle();
+                    break;
+            }
         }
         return figures;
     }
